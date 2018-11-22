@@ -5,7 +5,7 @@
     </head>
     <body>
         <referenceBlock name="product.info.addto">
-            <block class="Popup\Sizechart\Block\Display" name="popup.tab" template="popup.phtml" group="detailed_info"/>
+            <block class="Popup\Sizechart\Block\Display" name="popup" template="popup.phtml" group="detailed_info"/>
         </referenceBlock>
     </body>
 </page>

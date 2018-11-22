@@ -1,8 +1,15 @@
-#sizechart-button a{
-    color: black;
+#sizechart-button, .action_sizechart {
+    color: white;
     font-weight: 600;
     letter-spacing: .05em;
     text-transform: uppercase;
     display: inline-block;
     text-decoration: none;
+}
+
+.sizechart_wrapper {
+    padding:10px;
+    margin-bottom:10px;
+    background:orange;
+    text-align: center;
 }

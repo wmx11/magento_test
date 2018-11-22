@@ -13,9 +13,8 @@ define([
 
         var popup = modal(options, $('#modal-content'));
 
-        $("#sizechart-button").on('click', function () {
-            popup.modal("openModal");
-            $(".modal-footer").css('display', 'none')
+        $("#sizechart-popup-button").on('click', function () {
+            $("#modal-content").modal("openModal");
         });
     }
 );
