@@ -1,0 +1,11 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:View/Layout:etc/page_configuration.xsd">
+    <head>
+        <css src="Popup_Sizechart::css/style.css"/>
+    </head>
+    <body>
+        <referenceBlock name="product.info.addto">
+            <block class="Popup\Sizechart\Block\Display" name="popup.tab" template="popup.phtml" group="detailed_info"/>
+        </referenceBlock>
+    </body>
+</page>

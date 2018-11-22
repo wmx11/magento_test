@@ -1,0 +1,8 @@
+#sizechart-button a{
+    color: black;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+}
