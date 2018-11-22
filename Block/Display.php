@@ -18,7 +18,7 @@ class Display extends \Magento\Framework\View\Element\Template
         parent::__construct($context);
     }
 
-    public function getProductAttributeSizechartValue(): int
+    public function getProductAttributeSizechartValue(): ?int
     {
         return $this->productInformation->getProduct()
             ->getCustomAttribute(self::ATTRIBUTE_FIELD_SIZECHART)
