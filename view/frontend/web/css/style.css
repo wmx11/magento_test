@@ -13,3 +13,7 @@
     background:orange;
     text-align: center;
 }
+
+#modal-content {
+    display:none;
+}

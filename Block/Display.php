@@ -8,7 +8,9 @@ use \Magento\Catalog\Block\Product\View\AbstractView;
 class Display extends \Magento\Framework\View\Element\Template
 {
     protected $productInformation;
+
     const ATTRIBUTE_FIELD_SIZECHART = "sizechart";
+    const VALUE_DISABLED = "0";
 
     public function __construct(Context $context, AbstractView $productInformation)
     {
@@ -21,5 +23,13 @@ class Display extends \Magento\Framework\View\Element\Template
         return $this->productInformation->getProduct()
             ->getCustomAttribute(self::ATTRIBUTE_FIELD_SIZECHART)
             ->getValue();
+    }
+
+    public function ifEnabled(): bool
+    {
+        if ($this->getProductAttributeSizechartValue() !== self::VALUE_DISABLED) {
+            return true;
+        }
+        return false;
     }
 }
