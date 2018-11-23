@@ -18,18 +18,36 @@ class Display extends \Magento\Framework\View\Element\Template
         parent::__construct($context);
     }
 
-    public function getProductAttributeSizechartValue(): ?int
+    public function getProductAttributeSizechartValue()
     {
-        return $this->productInformation->getProduct()
-            ->getCustomAttribute(self::ATTRIBUTE_FIELD_SIZECHART)
-            ->getValue();
+        if ($this->validateCustomAttribute() !== false) {
+            return $this->getProductInformation()
+                ->getCustomAttribute(self::ATTRIBUTE_FIELD_SIZECHART)
+                ->getValue();
+        }
+        return false;
     }
 
     public function ifEnabled(): bool
     {
-        if ($this->getProductAttributeSizechartValue() !== self::VALUE_DISABLED) {
+        if ($this->getProductAttributeSizechartValue() !== false &&
+            $this->getProductAttributeSizechartValue() !== self::VALUE_DISABLED
+        ) {
             return true;
         }
         return false;
+    }
+
+    public function validateCustomAttribute(): bool
+    {
+        if ($this->getProductInformation()->getCustomAttribute(self::ATTRIBUTE_FIELD_SIZECHART) !== null) {
+            return true;
+        }
+        return false;
+    }
+
+    public function getProductInformation()
+    {
+        return $this->productInformation->getProduct();
     }
 }
