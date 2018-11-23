@@ -28,7 +28,7 @@ class InstallData implements InstallDataInterface
                 'label' => 'Display Product Size Chart',
                 'input' => 'select',
                 'class' => '',
-                'source' => 'Magento\Eav\Model\Entity\Attribute\Source\Boolean',
+                'source' => 'Popup\Sizechart\Model\Config\Source\Options',
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
                 'visible' => true,
                 'required' => false,
@@ -40,7 +40,9 @@ class InstallData implements InstallDataInterface
                 'visible_on_front' => false,
                 'used_in_product_listing' => true,
                 'unique' => false,
-                'apply_to' => ''
+                'option' => [
+                    'values' => []
+                ]
             ]
         );
     }
